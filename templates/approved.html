@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+{% block title %}Approved Loans · Global Trust Bank{% endblock %}
+
+{% block content %}
+  <div class="page-title">
+    <div>
+      <h1>Approved Loan Applications</h1>
+      <small>Only approved customers are listed here with EMI details.</small>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Active Approvals</span>
+      <span class="pill success">{{ loans|length }} Approved</span>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Applicant</th>
+            <th>Loan Type</th>
+            <th>Amount (₹)</th>
+            <th>Tenure (Yrs)</th>
+            <th>EMI (₹)</th>
+            <th>Interest (%)</th>
+            <th>Applied On</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if loans %}
+            {% for r in loans %}
+            <tr>
+              <td>{{ r['Name'] }}</td>
+              <td>{{ r['Loan_Type'] }}</td>
+              <td>₹{{ "{:,}".format((r['Loan_Amount']|float)|int) }}</td>
+              <td>{{ r['Tenure_Years'] }}</td>
+              <td>
+                {% set emi = r['EMI']|float %}
+                ₹{{ "{:,}".format(emi|round|int) }}
+              </td>
+              <td>{{ r['InterestRate'] }}</td>
+              <td>{{ r['DateApplied'] }}</td>
+            </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td colspan="7" style="text-align:center; font-size:12px; color:var(--text-muted);">
+                No approved loans yet.
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

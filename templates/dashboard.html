@@ -1,0 +1,78 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="dashboard">
+    <h2>Loan Applications Dashboard</h2>
+
+    <div class="stats-cards">
+        <div class="stat-card glass">
+            <span class="stat-label">Total Applications</span>
+            <span class="stat-value">{{ summary.total }}</span>
+        </div>
+        <div class="stat-card glass">
+            <span class="stat-label">Approved</span>
+            <span class="stat-value approved">{{ summary.approved }}</span>
+        </div>
+        <div class="stat-card glass">
+            <span class="stat-label">Rejected</span>
+            <span class="stat-value rejected">{{ summary.rejected }}</span>
+        </div>
+        <div class="stat-card glass">
+            <span class="stat-label">Total Amount Applied</span>
+            <span class="stat-value">₹{{ "{:,.0f}".format(summary.total_amount) }}</span>
+        </div>
+        <div class="stat-card glass">
+            <span class="stat-label">Approved Amount</span>
+            <span class="stat-value">₹{{ "{:,.0f}".format(summary.approved_amount) }}</span>
+        </div>
+    </div>
+
+    <div class="table-wrapper glass">
+        <h3>Recent Applications</h3>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Loan Type</th>
+                        <th>Amount (₹)</th>
+                        <th>Tenure (Years)</th>
+                        <th>Decision</th>
+                        <th>EMI (₹)</th>
+                        <th>Applied At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in applications|reverse %}
+                    <tr>
+                        <td>{{ app.ApplicationID }}</td>
+                        <td>{{ app.Name }}</td>
+                        <td>{{ app.LoanType }}</td>
+                        <td>₹{{ "{:,.0f}".format(app.LoanAmount | float) if app.LoanAmount else "-" }}</td>
+                        <td>{{ app.TenureYears }}</td>
+                        <td>
+                            <span class="badge {{ 'approved' if app.Decision == 'Approved' else 'rejected' }}">
+                                {{ app.Decision }}
+                            </span>
+                        </td>
+                        <td>
+                            {% if app.Decision == 'Approved' and app.EMI and (app.EMI | float) > 0 %}
+                                ₹{{ "{:,.2f}".format(app.EMI | float) }}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </td>
+                        <td>{{ app.AppliedAt }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="8" class="empty-row">No applications yet. Submit your first loan request!</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,93 @@
+
+{% extends "base.html" %}
+{% block title %}Decision · Global Trust Bank{% endblock %}
+
+{% block content %}
+  <div class="page-title">
+    <div>
+      <h1>Loan Decision</h1>
+      <small>Eligibility decision, credit score, and EMI breakdown.</small>
+    </div>
+    <a href="{{ url_for('apply') }}">
+      <button class="primary-btn"><span class="icon">📝</span>New Application</button>
+    </a>
+  </div>
+
+  <div class="card" style="margin-bottom:18px;">
+    <div class="card-header">
+      <span class="card-title">Applicant Summary</span>
+      {% if data.decision == 'Approved' %}
+      <span class="pill success">Approved</span>
+      {% else %}
+      <span class="pill danger">Rejected</span>
+      {% endif %}
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:10px 18px; font-size:13px;">
+      <div>
+        <strong>Name:</strong> {{ data.name }}<br/>
+        <strong>Age:</strong> {{ data.age }} years<br/>
+        <strong>Employment:</strong> {{ data.employment }}
+      </div>
+      <div>
+        <strong>Loan Type:</strong> {{ data.loan_type }}<br/>
+        <strong>Requested Amount:</strong> ₹{{ "{:,}".format(data.loan_amount|int) }}<br/>
+        <strong>Tenure:</strong> {{ data.tenure_years }} years
+      </div>
+      <div>
+        <strong>Monthly Income:</strong> ₹{{ "{:,}".format(data.income|int) }}<br/>
+        <strong>Existing Debt:</strong> ₹{{ "{:,}".format(data.existing_debt|int) }}<br/>
+        <strong>Debt-to-Income:</strong> {{ data.debt_to_income }}%
+      </div>
+      <div>
+        <strong>Cibil Score (System):</strong> {{ data.credit_score }}<br/>
+        <strong>Interest Rate:</strong> {{ data.interest_rate }}% p.a.<br/>
+        {% if data.max_allowed %}
+        <strong>Max Allowed for {{ data.loan_type }}:</strong> ₹{{ "{:,}".format(data.max_allowed|int) }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if data.decision == 'Approved' %}
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">EMI Details</span>
+      <span class="pill success">Sanctioned</span>
+    </div>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">
+      The loan is <strong>Approved</strong>. Below are the estimated EMI details based on the current interest rate and tenure.
+    </p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:10px 18px; font-size:13px;">
+      <div>
+        <strong>Monthly EMI:</strong><br/>
+        <span style="font-size:20px; font-weight:600;">₹{{ "{:,}".format(data.emi|round|int) }}</span>
+      </div>
+      <div>
+        <strong>Total Payable (Approx.):</strong><br/>
+        {% set months = (data.tenure_years * 12) | int %}
+        {% set total_payable = data.emi * months %}
+        ₹{{ "{:,}".format(total_payable|int) }} over {{ months }} months
+      </div>
+      <div>
+        <strong>Effective Interest Outgo:</strong><br/>
+        ₹{{ "{:,}".format((total_payable - data.loan_amount)|int) }} (approx.)
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Reason for Rejection</span>
+      <span class="pill danger">Not Approved</span>
+    </div>
+    <p style="font-size:13px; color:var(--text-muted);">
+      {{ data.remarks }}
+    </p>
+    <p style="font-size:12px; color:var(--text-muted); margin-top:6px;">
+      You can adjust the requested amount, tenure, or loan type and try again.
+    </p>
+  </div>
+  {% endif %}
+{% endblock %}

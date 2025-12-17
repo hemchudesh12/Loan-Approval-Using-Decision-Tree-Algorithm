@@ -1,0 +1,114 @@
+
+{% extends "base.html" %}
+{% block title %}Statistics · Global Trust Bank{% endblock %}
+{% block extra_head %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="page-title">
+    <div>
+      <h1>Loan Statistics &amp; Insights</h1>
+      <small>Visualize loan distribution, approvals and rejections across categories.</small>
+    </div>
+  </div>
+
+  <section class="grid-3" style="margin-bottom:18px;">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Total Applications</span>
+      </div>
+      <div class="card-value">{{ status_counts.total }}</div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Approved</span>
+        <span class="pill success">Approved</span>
+      </div>
+      <div class="card-value">{{ status_counts.approved }}</div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Rejected</span>
+        <span class="pill danger">Rejected</span>
+      </div>
+      <div class="card-value">{{ status_counts.rejected }}</div>
+    </div>
+  </section>
+
+  <section style="display:grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1.2fr); gap:18px; align-items:flex-start;">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Loans by Type</span>
+        <span class="pill">Pie Chart</span>
+      </div>
+      <canvas id="loanTypePie" height="220"></canvas>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Approval vs Rejection</span>
+        <span class="pill">Bar Chart</span>
+      </div>
+      <canvas id="loanBar" height="220"></canvas>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  const loanTypes = {{ loan_types|tojson }};
+  const typeCounts = {{ counts|tojson }};
+  const approvedCounts = {{ approved_counts|tojson }};
+  const rejectedCounts = {{ rejected_counts|tojson }};
+
+  const pieCtx = document.getElementById('loanTypePie').getContext('2d');
+  const barCtx = document.getElementById('loanBar').getContext('2d');
+
+  new Chart(pieCtx, {
+    type: 'pie',
+    data: {
+      labels: loanTypes,
+      datasets: [{
+        data: typeCounts,
+        borderWidth: 0
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { font: { size: 11 } }
+        }
+      }
+    }
+  });
+
+  new Chart(barCtx, {
+    type: 'bar',
+    data: {
+      labels: loanTypes,
+      datasets: [
+        {
+          label: 'Approved',
+          data: approvedCounts,
+        },
+        {
+          label: 'Rejected',
+          data: rejectedCounts,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' }
+      },
+      scales: {
+        x: { ticks: { font: { size: 11 } } },
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+{% block title %}Rejected Loans · Global Trust Bank{% endblock %}
+
+{% block content %}
+  <div class="page-title">
+    <div>
+      <h1>Rejected Loan Applications</h1>
+      <small>Track high-risk applications and reasons for rejection.</small>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Rejected Applications</span>
+      <span class="pill danger">{{ loans|length }} Rejected</span>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Applicant</th>
+            <th>Loan Type</th>
+            <th>Amount (₹)</th>
+            <th>Credit Score</th>
+            <th>Applied On</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if loans %}
+            {% for r in loans %}
+            <tr>
+              <td>{{ r['Name'] }}</td>
+              <td>{{ r['Loan_Type'] }}</td>
+              <td>₹{{ "{:,}".format((r['Loan_Amount']|float)|int) }}</td>
+              <td>{{ r['Credit_Score'] }}</td>
+              <td>{{ r['DateApplied'] }}</td>
+              <td style="max-width:280px;">{{ r['Remarks'] }}</td>
+            </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td colspan="6" style="text-align:center; font-size:12px; color:var(--text-muted);">
+                No rejected applications yet.
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

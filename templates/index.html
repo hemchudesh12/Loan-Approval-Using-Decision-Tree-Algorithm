@@ -1,0 +1,110 @@
+
+{% extends "base.html" %}
+{% block title %}Dashboard · NexaWorld Bank{% endblock %}
+
+{% block content %}
+  <div class="page-title">
+    <div>
+      <h1>Loan Intelligence Overview</h1>
+      <small>Monitor approvals, rejections, EMI exposure and category limits at a glance.</small>
+    </div>
+    <a href="{{ url_for('apply') }}">
+      <button class="primary-btn"><span class="icon">➕</span>New Loan Application</button>
+    </a>
+  </div>
+
+  <section class="grid-3">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Total Applications</span>
+        <span class="pill">Today &amp; History</span>
+      </div>
+      <div class="card-value">{{ summary.total }}</div>
+      <div style="font-size:12px; color:var(--text-muted);">
+        Approved: <strong>{{ summary.approved }}</strong> · Rejected: <strong>{{ summary.rejected }}</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Approved &amp; Active</span>
+        <span class="pill success">Approved</span>
+      </div>
+      <div class="card-value">{{ summary.approved }}</div>
+      <div style="font-size:12px; color:var(--text-muted);">
+        Estimated amount disbursed: <strong>₹{{ "{:,}".format(summary.total_disbursed) }}</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Rejected / Risky</span>
+        <span class="pill danger">Rejected</span>
+      </div>
+      <div class="card-value">{{ summary.rejected }}</div>
+      <div style="font-size:12px; color:var(--text-muted);">
+        Monitor patterns &amp; fine-tune rules using the statistics page.
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:24px; display:grid; grid-template-columns: minmax(0,2.1fr) minmax(0,1.2fr); gap:18px; align-items:flex-start;">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">By Loan Type</span>
+        <span class="pill">Performance Snapshot</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Loan Type</th>
+            <th>Applications</th>
+            <th>Approved</th>
+            <th>Rejected</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if loan_type_stats %}
+            {% for lt, s in loan_type_stats.items() %}
+            <tr>
+              <td>{{ lt }}</td>
+              <td>{{ s.total }}</td>
+              <td>{{ s.approved }}</td>
+              <td>{{ s.rejected }}</td>
+            </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td colspan="4" style="text-align:center; font-size:12px; color:var(--text-muted);">
+                No applications found yet. Start by creating a new loan application.
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Category Limits</span>
+        <span class="pill">Max Allowed (₹)</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Loan Type</th>
+            <th>Max Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for lt, limit in loan_limits.items() %}
+          <tr>
+            <td>{{ lt }}</td>
+            <td>₹{{ "{:,}".format(limit|int) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}

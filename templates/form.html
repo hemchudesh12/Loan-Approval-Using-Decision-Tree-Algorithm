@@ -1,0 +1,85 @@
+
+{% extends "base.html" %}
+{% block title %}Apply for Loan · Global Trust Bank{% endblock %}
+
+{% block content %}
+  <div class="page-title">
+    <div>
+      <h1>Loan Application Form</h1>
+      <small>Enter applicant details and let the system calculate eligibility and EMI.</small>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Applicant &amp; Loan Details</span>
+      <span class="pill">Category-wise limits enforced automatically</span>
+    </div>
+
+    <form action="{{ url_for('submit') }}" method="POST">
+      <div class="form-grid">
+        <div class="field">
+          <label>Applicant Name</label>
+          <input type="text" name="name" placeholder="Enter full name" required />
+        </div>
+
+        <div class="field">
+          <label>Age</label>
+          <input type="number" name="age" min="18" max="75" placeholder="e.g. 30" required />
+        </div>
+
+        <div class="field">
+          <label>Monthly Income (₹)</label>
+          <input type="number" name="income" min="0" step="1000" placeholder="e.g. 60000" required />
+          <small>Gross monthly income from all sources.</small>
+        </div>
+
+        <div class="field">
+          <label>Existing Debt (₹)</label>
+          <input type="number" name="existing_debt" min="0" step="1000" value="0" />
+          <small>Any ongoing EMIs, credit card dues, etc.</small>
+        </div>
+
+        <div class="field">
+          <label>Loan Type</label>
+          <select name="loan_type" required>
+            <option value="" disabled selected>Select type</option>
+            {% for lt in loan_limits.keys() %}
+            <option value="{{ lt }}">{{ lt }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Loan Amount Required (₹)</label>
+          <input type="number" name="loan_amount" min="0" step="5000" placeholder="e.g. 500000" required />
+          <small>System will validate against category-wise maximum limits.</small>
+        </div>
+
+        <div class="field">
+          <label>Tenure (Years)</label>
+          <input type="number" name="tenure_years" min="1" max="30" value="5" />
+          <small>Used for EMI calculation if loan is approved.</small>
+        </div>
+
+        <div class="field">
+          <label>Employment Type</label>
+          <select name="employment" required>
+            <option value="Salaried">Salaried</option>
+            <option value="Self-employed">Self-employed</option>
+            <option value="Business Owner">Business Owner</option>
+            <option value="Student">Student</option>
+            <option value="Unemployed">Unemployed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions-row">
+        <button type="reset" class="ghost-btn">Clear</button>
+        <button type="submit" class="primary-btn">
+          <span class="icon">⚡</span>Check Eligibility &amp; EMI
+        </button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
