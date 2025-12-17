@@ -1,0 +1,21 @@
+Name,Age,Income,Loan_Amount,Loan_Type,Credit_Score,Loan_Status,DateApplied,InterestRate,Remarks,Decision
+John,28,50000,200000,Personal,720,Approved,10-10-2025,8.5,Good record,Approved
+Emma,35,85000,300000,Home,710,Approved,11-10-2025,7.2,Stable income,Approved
+Liam,40,60000,150000,Car,690,Approved,12-10-2025,7.8,Moderate debt,Approved
+Olivia,22,20000,100000,Education,640,Rejected,13-10-2025,9.2,Low income,Rejected
+Noah,45,95000,400000,Home,750,Approved,14-10-2025,6.8,Strong applicant,Approved
+Sophia,31,70000,250000,Car,680,Approved,15-10-2025,7.5,Good job stability,Approved
+James,50,120000,500000,Home,770,Approved,16-10-2025,6.9,High income,Approved
+Isabella,26,45000,200000,Personal,630,Rejected,17-10-2025,8.8,Low credit score,Rejected
+Ethan,38,95000,350000,Home,700,Approved,18-10-2025,7.0,Good credit,Approved
+Ava,30,65000,180000,Car,710,Approved,19-10-2025,7.3,Low debt,Approved
+Mason,42,80000,300000,Personal,665,Approved,20-10-2025,8.0,Acceptable risk,Approved
+Mia,24,18000,90000,Education,580,Rejected,21-10-2025,9.5,High DTI,Rejected
+Logan,29,55000,160000,Car,700,Approved,22-10-2025,7.6,Consistent payer,Approved
+Charlotte,33,100000,400000,Home,740,Approved,23-10-2025,6.7,Good profile,Approved
+Lucas,27,48000,150000,Personal,655,Approved,24-10-2025,8.3,Stable job,Approved
+Amelia,39,87000,320000,Car,725,Approved,25-10-2025,7.1,High reliability,Approved
+Henry,48,110000,450000,Home,760,Approved,26-10-2025,6.9,Low debt,Approved
+Harper,25,40000,180000,Personal,610,Rejected,27-10-2025,9.0,Low credit,Rejected
+William,52,95000,380000,Home,745,Approved,28-10-2025,6.8,Good financials,Approved
+Evelyn,32,72000,250000,Car,705,Approved,29-10-2025,7.4,Good income,Approved

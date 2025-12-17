@@ -1,0 +1,83 @@
+Name,Age,Income,Loan_Amount,Loan_Type,Tenure_Years,Employment,Existing_Debt,Debt_to_Income,Credit_Score,InterestRate,EMI,Loan_Status,DateApplied,Remarks,Decision
+John,28,50000,200000,Personal,5,,0,,720,8.5,4103.31,Approved,10-10-2025,Good record,Approved
+Emma,35,85000,300000,Home,5,,0,,710,7.2,5968.71,Approved,11-10-2025,Stable income,Approved
+Liam,40,60000,150000,Car,5,,0,,690,7.8,3027.12,Approved,12-10-2025,Moderate debt,Approved
+Olivia,22,20000,100000,Education,5,,0,,640,9.2,2085.56,Rejected,13-10-2025,Low income,Rejected
+Noah,45,95000,400000,Home,5,,0,,750,6.8,7882.79,Approved,14-10-2025,Strong applicant,Approved
+Sophia,31,70000,250000,Car,5,,0,,680,7.5,5009.49,Approved,15-10-2025,Good job stability,Approved
+James,50,120000,500000,Home,5,,0,,770,6.9,9877.03,Approved,16-10-2025,High income,Approved
+Isabella,26,45000,200000,Personal,5,,0,,630,8.8,4132.28,Rejected,17-10-2025,Low credit score,Rejected
+Ethan,38,95000,350000,Home,5,,0,,700,7.0,6930.42,Approved,18-10-2025,Good credit,Approved
+Ava,30,65000,180000,Car,5,,0,,710,7.3,3589.75,Approved,19-10-2025,Low debt,Approved
+Mason,42,80000,300000,Personal,5,,0,,665,8.0,6082.92,Approved,20-10-2025,Acceptable risk,Approved
+Mia,24,18000,90000,Education,5,,0,,580,9.5,1890.17,Rejected,21-10-2025,High DTI,Rejected
+Logan,29,55000,160000,Car,5,,0,,700,7.6,3213.68,Approved,22-10-2025,Consistent payer,Approved
+Charlotte,33,100000,400000,Home,5,,0,,740,6.7,7863.99,Approved,23-10-2025,Good profile,Approved
+Lucas,27,48000,150000,Personal,5,,0,,655,8.3,3063.04,Approved,24-10-2025,Stable job,Approved
+Amelia,39,87000,320000,Car,5,,0,,725,7.1,6351.49,Approved,25-10-2025,High reliability,Approved
+Henry,48,110000,450000,Home,5,,0,,760,6.9,8889.32,Approved,26-10-2025,Low debt,Approved
+Harper,25,40000,180000,Personal,5,,0,,610,9.0,3736.5,Rejected,27-10-2025,Low credit,Rejected
+William,52,95000,380000,Home,5,,0,,745,6.8,7488.65,Approved,28-10-2025,Good financials,Approved
+Evelyn,32,72000,250000,Car,5,,0,,705,7.4,4997.62,Approved,29-10-2025,Good income,Approved
+Aarav Sharma,28,52000,200000,Personal,5,Salaried,5000,12,745,8.5,4103.31,Approved,2025-11-01,Good Profile,Approved
+Priya Nair,32,65000,350000,Home,10,Salaried,0,5,780,7.9,4174.12,Approved,2025-10-28,Strong CIBIL,Approved
+Rohit Verma,30,48000,150000,Personal,4,Self-Employed,2000,8,720,9.2,3750.18,Approved,2025-11-04,Eligible,Approved
+Sneha Iyer,27,70000,500000,Home,15,Salaried,10000,14,760,8.1,4786.20,Approved,2025-11-07,Stable Income,Approved
+Karthik Reddy,35,90000,800000,Home,20,Salaried,20000,22,770,7.8,6543.11,Approved,2025-11-06,High Repayment Capacity,Approved
+Meera Pillai,29,60000,250000,Personal,5,Salaried,0,5,740,9.0,5186.54,Approved,2025-10-29,No Liabilities,Approved
+Arjun Singh,33,85000,600000,Home,12,Self-Employed,15000,18,755,8.4,6678.25,Approved,2025-11-05,Eligible,Approved
+Divya Suresh,31,58000,180000,Education,7,Salaried,0,3,730,8.2,2874.12,Approved,2025-10-30,Meets Criteria,Approved
+Nikhil Gupta,26,45000,120000,Personal,4,Salaried,0,0,715,9.5,3018.44,Approved,2025-11-02,Good Score,Approved
+Anusha R,28,55000,200000,Car,6,Salaried,3000,7,735,8.9,3615.77,Approved,2025-11-03,Valid Applicant,Approved
+Shubham Patel,34,78000,400000,Home,10,Salaried,12000,15,750,8.0,4852.30,Approved,2025-10-31,Stable Job,Approved
+Lakshmi Menon,30,62000,220000,Personal,6,Self-Employed,0,0,725,9.1,3972.88,Approved,2025-11-08,Strong Profile,Approved
+Rahul Mehta,29,67000,300000,Car,7,Salaried,4000,6,745,8.7,4619.44,Approved,2025-11-01,Low Debt,Approved
+Pooja Desai,27,59000,160000,Bike,5,Salaried,0,0,735,7.5,3211.64,Approved,2025-11-10,Eligible,Approved
+Siddharth Rao,36,95000,900000,Home,20,Salaried,25000,20,780,7.5,7245.22,Approved,2025-11-09,Strong CIBIL,Approved
+Aishwarya Joshi,33,72000,350000,Home,12,Salaried,8000,11,760,8.0,4288.30,Approved,2025-10-27,Meets All Rules,Approved
+Harsh Jain,28,63000,210000,Personal,6,Salaried,0,0,740,9.0,3742.45,Approved,2025-11-04,Valid Applicant,Approved
+Keerthi N,25,50000,130000,Education,5,Salaried,0,0,710,8.6,2664.19,Approved,2025-11-03,Eligible,Approved
+Ashwin Kumar,31,68000,250000,Car,7,Salaried,5000,7,750,8.4,3965.23,Approved,2025-10-26,Stable Salary,Approved
+Ritu Sharma,29,59000,180000,Personal,5,Salaried,0,0,745,9.0,3748.12,Approved,2025-11-05,Good Record,Approved
+Vishal Yadav,34,80000,450000,Home,15,Salaried,10000,12,765,8.3,5042.17,Approved,2025-11-02,Meets Criteria,Approved
+Nandhini K,30,62000,200000,Car,6,Self-Employed,0,0,740,8.5,3655.77,Approved,2025-11-07,Valid,Approved
+Gaurav Mishra,32,72000,380000,Home,12,Salaried,7000,9,755,7.9,4233.60,Approved,2025-11-06,Strong Profile,Approved
+Revathi S,27,48000,150000,Bike,5,Salaried,0,0,725,7.8,3014.55,Approved,2025-11-03,Low Risk,Approved
+Jayant Chopra,35,85000,500000,Home,15,Salaried,12000,14,770,8.1,4899.10,Approved,2025-10-28,Good CIBIL,Approved
+Aman Malik,29,38000,250000,Personal,5,Salaried,15000,40,620,12.5,,Rejected,2025-11-04,High Debt,Rejected
+Rekha Saini,33,45000,300000,Home,12,Self-Employed,18000,45,600,13.0,,Rejected,2025-10-31,Poor Score,Rejected
+Suresh Naik,40,50000,400000,Home,15,Salaried,20000,40,610,12.8,,Rejected,2025-11-09,Insufficient CIBIL,Rejected
+Madhuri Patil,26,35000,150000,Personal,6,Salaried,10000,33,580,14.1,,Rejected,2025-11-06,High Risk,Rejected
+Imran Khan,31,42000,300000,Car,7,Salaried,15000,36,590,13.5,,Rejected,2025-11-03,Not Eligible,Rejected
+Deepika Raj,28,40000,250000,Personal,5,Self-Employed,12000,30,600,14.2,,Rejected,2025-11-05,High Burden,Rejected
+Sanjay Kumar,30,38000,200000,Bike,5,Salaried,9000,28,590,13.0,,Rejected,2025-11-01,Low Score,Rejected
+Preethi R,27,36000,220000,Personal,6,Salaried,11000,31,585,13.8,,Rejected,2025-11-04,Eligibility Failed,Rejected
+Farhan Shaikh,34,47000,350000,Home,10,Salaried,19000,40,600,12.5,,Rejected,2025-10-30,DTI Too High,Rejected
+Anil Deshmukh,39,52000,400000,Car,8,Self-Employed,22000,42,590,13.7,,Rejected,2025-11-08,High Liability,Rejected
+Shalini K,26,31000,180000,Personal,5,Salaried,9000,29,575,14.9,,Rejected,2025-10-29,Poor Credit,Rejected
+Aravind S,33,46000,320000,Home,12,Salaried,18000,39,610,12.9,,Rejected,2025-11-02,CIBIL Low,Rejected
+Neha Kulkarni,29,39000,200000,Bike,5,Salaried,10000,26,590,13.4,,Rejected,2025-11-07,Not Eligible,Rejected
+Jatin Mehra,32,45000,330000,Home,15,Salaried,21000,42,620,12.7,,Rejected,2025-11-06,High Risk,Rejected
+Sowmya Rao,25,34000,150000,Personal,6,Salaried,8000,24,580,14.0,,Rejected,2025-11-05,Low CIBIL,Rejected
+Manoj Shetty,36,48000,360000,Car,9,Salaried,19000,39,610,12.6,,Rejected,2025-11-04,DTI High,Rejected
+Haritha M,28,37000,200000,Personal,5,Salaried,11000,30,600,13.8,,Rejected,2025-11-03,Weak Profile,Rejected
+Rahul Arora,34,46000,300000,Car,8,Salaried,17000,37,605,12.9,,Rejected,2025-10-27,Low Score,Rejected
+Sandhya Menon,30,41000,240000,Personal,6,Self-Employed,13000,32,595,13.4,,Rejected,2025-10-26,High Debt,Rejected
+Venkatesh Prasad,38,50000,380000,Home,12,Salaried,20000,40,610,12.8,,Rejected,2025-11-10,CIBIL Too Low,Rejected
+Hemchudesh,21,30000.0,200000.0,Personal,2.0,Salaried,0.0,666.67,620,10.5,0.0,Rejected,2025-11-28 08:17:21,High debt-to-income ratio. Stable salaried employment. Score or DTI outside acceptable range.,Rejected
+Hemchudesh,21,30000.0,200000.0,Personal,2.0,Salaried,0.0,0.0,760,10.1,9238.22,Approved,2025-11-28 08:20:21,Excellent debt-to-income ratio. Stable salaried employment. Credit score and DTI within acceptable range.,Approved
+Mani,22,25000.0,2500000.0,Home,5.0,Business Owner,120000.0,10480.0,560,8.2,0.0,Rejected,2025-11-28 08:33:21,High debt-to-income ratio. Requested amount is high compared to income. Score or DTI outside acceptable range.,Rejected
+Mani,22,85000.0,2500000.0,Home,5.0,Business Owner,0.0,2941.18,560,8.2,0.0,Rejected,2025-11-28 08:33:51,High debt-to-income ratio. Requested amount is high compared to income. Score or DTI outside acceptable range.,Rejected
+Mani,22,185000.0,2500000.0,Home,5.0,Business Owner,0.0,1351.35,560,8.2,0.0,Rejected,2025-11-28 08:34:49,High debt-to-income ratio. Requested amount is high compared to income. Score or DTI outside acceptable range.,Rejected
+Mani,22,185000.0,2500000.0,Home,5.0,Business Owner,0.0,0.0,700,7.1,49621.03,Approved,2025-11-28 08:35:05,Excellent debt-to-income ratio. Requested amount is high compared to income. Credit score and DTI within acceptable range.,Approved
+Mani,22,185000.0,2500000.0,Home,5.0,Business Owner,500000.0,270.27,560,8.2,0.0,Rejected,2025-11-28 08:35:35,High debt-to-income ratio. Requested amount is high compared to income. Score or DTI outside acceptable range.,Rejected
+Hem,22,885000.0,2500000.0,Business,5.0,Business Owner,0.0,0.0,750,11.1,54480.82,Approved,2025-11-28 17:52:56,Excellent debt-to-income ratio. Requested amount is reasonable compared to income. Credit score and DTI within acceptable range.,Approved
+Hem,22,885000.0,2500000.0,Business,5.0,Business Owner,0.0,0.0,750,8.1,50810.72,Approved,2025-11-28 17:54:09,Excellent debt-to-income ratio. Requested amount is reasonable compared to income. Credit score and DTI within acceptable range.,Approved
+Hem,22,885000.0,2500000.0,Business,5.0,Business Owner,0.0,0.0,750,8.1,50810.72,Approved,2025-11-28 19:30:22,Excellent debt-to-income ratio. Requested amount is reasonable compared to income. Credit score and DTI within acceptable range.,Approved
+Hemchudesh,32,45000.0,250000.0,Personal,2.0,Salaried,0.0,0.0,770,7.1,11204.48,Approved,2025-11-28 19:32:25,Excellent debt-to-income ratio. Stable salaried employment. Credit score and DTI within acceptable range.,Approved
+Hemchudesh,32,45000.0,250000.0,Personal,3.0,Salaried,100000.0,222.22,630,7.5,0.0,Rejected,2025-11-28 19:32:58,High debt-to-income ratio. Stable salaried employment. Score or DTI outside acceptable range.,Rejected
+Sam,19,0.0,250000.0,Education,3.0,Student,0.0,0,680,5.0,0.0,Rejected,2025-11-30 17:48:02,Excellent debt-to-income ratio. Requested amount is high compared to income. Very young age – limited credit history. Score or DTI outside acceptable range.,Rejected
+Sam,20,0.0,250000.0,Home,5.0,Salaried,0.0,0,710,5.1,4729.27,Approved,2025-12-11 09:42:13,Excellent debt-to-income ratio. Stable salaried employment. Requested amount is high compared to income. Very young age – limited credit history. Credit score and DTI within acceptable range.,Approved
+Sam,22,48000.0,250000.0,Personal,3.0,Salaried,0.0,0.0,760,7.1,7730.71,Approved,2025-12-17 11:33:31,Excellent debt-to-income ratio. Stable salaried employment. Credit score and DTI within acceptable range.,Approved
+Hemchudesh As,21,50000.0,500000.0,Car,5.0,Salaried,0.0,0.0,760,6.6,9806.51,Approved,2025-12-17 12:31:38,Excellent debt-to-income ratio. Stable salaried employment. Credit score and DTI within acceptable range.,Approved
+hem,45,30000.0,1000000.0,Home,10.0,Self-employed,0.0,0.0,720,5.1,10655.5,Approved,2025-12-17 12:33:46,Excellent debt-to-income ratio. Self-employed. Requested amount is high compared to income. Credit score and DTI within acceptable range.,Approved
